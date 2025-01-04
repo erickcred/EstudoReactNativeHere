@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Alert, FlatList, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 import { styles } from "./styles";
 import { Participant } from "../../components/Participant";
@@ -7,7 +8,6 @@ import { Participant } from "../../components/Participant";
 export function Home() {
   const [ participant, setParticipant ] = useState('');
   const [ participants, setParticipants] = useState<string[]>([])
-
 
   function handleParticipantAdd() {
     if (participants.includes(participant)) {
@@ -23,26 +23,16 @@ export function Home() {
   }
 
   function handleParticipantRemove(name: string) {
-    if (participants.includes(name)) {
-      return Alert.alert('Remover', `Deseja remover o participante ${name}?`, [
-        {
-          text: 'Sim',
-          onPress: () => {
-            if (participants.length > 1) {
-              setParticipants(participants.filter(item => item == name))
-            } else {
-              setParticipants([])
-            }
-            Alert.alert('Deletado!')
-          },
-        },
-        {
-          text: 'Não',
-          style: 'cancel',
-        }
-      ]);
-    }
-    console.log(`Removendo participante`);
+    return Alert.alert('Remover', `Deseja remover o participante ${name}?`, [
+      {
+        text: 'Sim',
+        onPress: () => setParticipants(prevState => prevState.filter(item => item !== name))
+      },
+      {
+        text: 'Não',
+        style: 'cancel',
+      }
+    ]);
   }
 
   return (
@@ -60,7 +50,8 @@ export function Home() {
         />
 
         <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
-          <Text style={styles.buttonText}>+</Text>
+          {/* <Text style={styles.buttonText}>+</Text> */}
+          <AntDesign name="plus" size={32} color="green" />
         </TouchableOpacity>
       </View>
 
@@ -79,6 +70,7 @@ export function Home() {
           <Text style={styles.listEmptyText}>
             Niguém chegou no evento ainda? Adicione participantes a sua lista de prescença.
           </Text>
+          
         )}
       />
 

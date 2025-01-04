@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   name: {
     flex: 1,
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 16,
     marginRight: 12,
     padding: 16,
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#e23c44',
   },
   buttonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 24,
   }
 });

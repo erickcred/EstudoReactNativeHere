@@ -2,12 +2,12 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#000',
+    backgroundColor: '#1E1E1C',
     flex: 1,
     padding: 24,
   },
   eventName: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 24,
     fontWeight: 'bold',
     marginTop: 48,
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     height: 56,
     backgroundColor: '#1f1e25',
     borderRadius: 5,
-    color: '#fff',
+    color: '#ffffff',
     padding: 16,
     marginRight: 12,
   },
@@ -40,11 +40,14 @@ export const styles = StyleSheet.create({
     backgroundColor: '#31cf67',
   },
   buttonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 24,
   },
   listEmptyText: {
-    color: '#fff',
+    paddingLeft: 10,
+    paddingRight: 10,
+    lineHeight: 20,
+    color: '#ffffff',
     fontSize: 14,
     textAlign: 'center',
   },
